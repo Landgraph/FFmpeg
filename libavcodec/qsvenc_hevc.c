@@ -217,11 +217,7 @@ static av_cold int qsv_enc_close(AVCodecContext *avctx)
     return ff_qsv_enc_close(avctx, &q->qsv);
 }
 
-#if defined(_WIN32)
-#define LOAD_PLUGIN_DEFAULT LOAD_PLUGIN_HEVC_SW
-#else
 #define LOAD_PLUGIN_DEFAULT LOAD_PLUGIN_HEVC_HW
-#endif
 
 #define OFFSET(x) offsetof(QSVHEVCEncContext, x)
 #define VE AV_OPT_FLAG_VIDEO_PARAM | AV_OPT_FLAG_ENCODING_PARAM
